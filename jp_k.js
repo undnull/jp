@@ -21,6 +21,7 @@
 const SYL = [
     "A",    "I",    "U",    "E",    "O",
     "KA",   "KI",   "KU",   "KE",   "KO",
+    "SA",   "SHI",  "SU",   "SE",   "SO",
 ];
 
 const shuffle = function(arr) {
