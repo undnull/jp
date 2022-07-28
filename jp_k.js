@@ -13,18 +13,14 @@
 // glyphs so I can torture myself and write those down.
 // Like half of a 48-page scratchbook wasn't enough.
 
+// This is an extension of the previous script,
+// because duh, Katakana exists.
+// But this time it's not the Romanji syllables
+// that are displayed first but Hiragana... :D
+
 const SYL = [
     "A",    "I",    "U",    "E",    "O",
     "KA",   "KI",   "KU",   "KE",   "KO",
-    "SA",   "SHI",  "SU",   "SE",   "SO",
-    "TA",   "CHI",  "TSU",  "TE",   "TO",
-    "NA",   "NI",   "NU",   "NE",   "NO",
-    "HA",   "HI",   "FU",   "HE",   "HO",
-    "MA",   "MI",   "MU",   "ME",   "MO",
-    "YA",           "YU",           "YO",
-    "RA",   "RI",   "RU",   "RE",   "RO",
-    "WA",                           "WO",
-     "N"
 ];
 
 const shuffle = function(arr) {
@@ -48,19 +44,16 @@ const syl2kan = function(arr, func) {
 };
 
 const hepburn = require("hepburn");
-const syl_result = shuffle(SYL);
-const kan_result = syl2kan(syl_result, hepburn.toHiragana);
+const shuffled = shuffle(SYL);
+const hiragana = syl2kan(shuffled, hepburn.toHiragana);
+const katakana = syl2kan(shuffled, hepburn.toKatakana);
 
-console.log("showing shuffled array");
-console.log(syl_result);
+console.log(hiragana);
 console.log();
-
-console.log("press any key to show converted shuffled array");
+console.log("wait");
 process.stdin.once("data", function() {
     // Clean code my white Russian ass
-    console.log();
-    console.log("showing converted shuffled array");
-    console.log(kan_result);
+    console.log(katakana);
     process.exit(0);
 });
 
