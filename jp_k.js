@@ -26,6 +26,10 @@ const SYL = [
     "NA",   "NI",   "NU",   "NE",   "NO",
     "HA",   "HI",   "FU",   "HE",   "HO",
     "MA",   "MI",   "MU",   "ME",   "MO",
+    "YA",           "YU",           "YO",
+    "RA",   "RI",   "RU",   "RE",   "RO",
+    "WA",                           "WO",
+    "N"
 ];
 
 const shuffle = function(arr) {
